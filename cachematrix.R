@@ -1,8 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Author: tomdelarosa
+## This function create a special object matrix
+## wichi is able to cache its inverse
 
-## Write a short comment describing this function
-
+## This creates the special matrix
+## Access to matrix should be done through $set() and $get() functions
 makeCacheMatrix <- function(x = matrix()) {
     invcached <- NULL
 
@@ -29,14 +30,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 }
 
-
-## Write a short comment describing this function
-
+## This returns the matrix inverse and caches the computed inverse
+## in case it has not been computed yet for the last matrix update 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
      inv <- x$getinv()
         if(!is.null(inv)) {
-                #
+                
                 return(inv)
         }
         matrixdata <- x$get()
